@@ -12,25 +12,27 @@
  * \file
  * \brief Definicja klasy Interp4Move
  *
- * Plik zawiera definicję klasy Interp4Move ...
+ * Plik zawiera definicję klasy Interp4Move.
  */
 
 /*!
  * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego ruch do przodu
  *
- *  Klasa modeluje ...
+ *  Klasa modeluje polecenie wymuszające ruch robota w linii prostej, przy zadanej prędkości.
  */
 class Interp4Move: public Interp4Command {
   /*
-   *  Tu należy zdefiniować pola, które są niezbędne
-   *  do przechowywania wartości parametrów danego polecenia.
-   *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
+   * \brief Długość trasy.
    */
   double  _pathLen_m;
+
+  /*!
+   *\brief Prędkość poruszania się.
+   */
   double  _Speed_mmS;
  public:
   /*!
-   * \brief
+   * \brief Konstruktor klasy Interp4Move.
    */
   Interp4Move();  
   /*!

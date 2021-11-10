@@ -10,24 +10,30 @@
 
 /*!
  * \file
- * \brief Definicja klasy Interp4Move
+ * \brief Definicja klasy Interp4Rotate
  *
  * Plik zawiera definicję klasy Interp4Move ...
  */
 
 /*!
- * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego ruch do przodu
+ * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego obrót.
  *
- *  Klasa modeluje ...
+ *  Klasa modeluje polecenie odpowiadające za obrót robota wokół zadanej osi, przy ustalonej prędkości kątowej.
  */
 class Interp4Rotate: public Interp4Command {
   /*
-   *  Tu należy zdefiniować pola, które są niezbędne
-   *  do przechowywania wartości parametrów danego polecenia.
-   *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
+   *\brief Prędkość obrotu robota w stopniach na sekundę.
    */
   double  _rotSpeed_degs;
+
+  /*
+   *\brief Oś obrotu robota.
+   */
   std::string  _rotAxis;
+
+  /*
+   *\brief Kąt o jaki ma obrócić się robot.
+   */
   double  _rotDeg_deg;
  public:
   /*!

@@ -10,26 +10,24 @@
 
 /*!
  * \file
- * \brief Definicja klasy Interp4Move
+ * \brief Definicja klasy Interp4Pause
  *
- * Plik zawiera definicję klasy Interp4Move ...
+ * Plik zawiera definicję klasy Interp4Pause ...
  */
 
 /*!
- * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego ruch do przodu
+ * \brief Modeluje polecenie dla robota mobilnego, które wymusza jego zatrzymanie
  *
- *  Klasa modeluje ...
+ *  Klasa modeluje polecenie odpowiadające za zatrzymanie się robota.
  */
 class Interp4Pause: public Interp4Command {
   /*
-   *  Tu należy zdefiniować pola, które są niezbędne
-   *  do przechowywania wartości parametrów danego polecenia.
-   *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
+   *  \brief Czas zatrzymania.
    */
   double  _pauseTime_ms;
  public:
   /*!
-   * \brief
+   * \brief Konstruktor klasy Interp4Move.
    */
   Interp4Pause();  
   /*!

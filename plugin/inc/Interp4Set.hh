@@ -22,10 +22,29 @@
  */
 class Interp4Set: public Interp4Command {
 
+  /*!
+   *\brief Wartość pozycji w osi x.
+   */
   double  _xPos_m;
+
+  /*!
+   *\brief Wartość pozycji w osi y.
+   */
   double  _yPos_m;
+
+  /*!
+   *\brief Rotacja w osi x.
+   */
   double  _xRot_deg;
+
+  /*!
+   *\brief Rotacja w osi y.
+   */
   double  _yRot_deg;
+
+  /*!
+   *\brief Rotacja w osi z.
+   */
   double  _zRot_deg;
   
  public:

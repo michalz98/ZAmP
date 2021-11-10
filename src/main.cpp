@@ -146,8 +146,17 @@ bool ExecPreprocesor( const char * NazwaPliku, istringstream &IStrm4Cmds )
   return pclose(pProc) == 0;
 }
 
+
+
+
 int main()
 {
+
+  Configuration   Config;
+
+   if (!ReadFile("config/config.xml",Config)) return 1;
+
+   
   void *pLibHnd_Move = dlopen("libInterp4Move.so",RTLD_LAZY);
   Interp4Command *(*pCreateCmd_Move)(void);
   void *pFun;
@@ -167,7 +176,7 @@ int main()
 
 
   Interp4Command *pCmd = pCreateCmd_Move();
-
+  /*
   cout << endl;
   cout << pCmd->GetCmdName() << endl;
   cout << endl;
@@ -175,7 +184,7 @@ int main()
   cout << endl;
   pCmd->PrintCmd();
   cout << endl;
-
+  */
   
   dlclose(pLibHnd_Move);
 
@@ -197,7 +206,7 @@ int main()
 
 
   pCmd = pCreateCmd_Set();
-
+  /*
   cout << endl;
   cout << pCmd->GetCmdName() << endl;
   cout << endl;
@@ -205,7 +214,7 @@ int main()
   cout << endl;
   pCmd->PrintCmd();
   cout << endl;
-
+  */
   dlclose(pLibHnd_Set);
 
 
@@ -227,7 +236,7 @@ int main()
 
 
   pCmd = pCreateCmd_Pause();
-
+  /*
   cout << endl;
   cout << pCmd->GetCmdName() << endl;
   cout << endl;
@@ -235,7 +244,7 @@ int main()
   cout << endl;
   pCmd->PrintCmd();
   cout << endl;
-
+  */
   dlclose(pLibHnd_Pause);
 
   void *pLibHnd_Rotate = dlopen("libInterp4Rotate.so",RTLD_LAZY);
@@ -256,7 +265,7 @@ int main()
 
 
   pCmd = pCreateCmd_Rotate();
-
+  /*
   cout << endl;
   cout << pCmd->GetCmdName() << endl;
   cout << endl;
@@ -264,12 +273,9 @@ int main()
   cout << endl;
   pCmd->PrintCmd();
   cout << endl;
-  
+  */
   delete pCmd;
 
   dlclose(pLibHnd_Rotate);
 
-  Configuration   Config;
-
-   if (!ReadFile("config/config.xml",Config)) return 1;
 }

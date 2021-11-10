@@ -30,6 +30,9 @@ interp: obj/xmlinterp.o obj/main.o
 obj/main.o: src/main.cpp inc/Interp4Command.hh inc/xmlinterp.hh
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
 
+doc:
+	cd dox; make
+
 clean:
 	rm -f obj/* interp core*
 
