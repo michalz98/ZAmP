@@ -22,7 +22,7 @@ CPPFLAGSXML=-Wall -g -pedantic -Iinc
 
 
 obj/xmlinterp.o: src/xmlinterp.cpp inc/xmlinterp.hh
-	g++ -c ${CPPFLAGSXML} -o obj/xmlinterp.o src/xmlinterp.cpp
+	g++ -c ${CPPFLAGS} -o obj/xmlinterp.o src/xmlinterp.cpp
 
 interp: obj/xmlinterp.o obj/main.o 
 	g++ ${LDFLAGS} -o interp obj/xmlinterp.o  obj/main.o -ldl -lxerces-c
@@ -32,8 +32,6 @@ obj/main.o: src/main.cpp inc/Interp4Command.hh inc/xmlinterp.hh
 
 clean:
 	rm -f obj/* interp core*
-	rm -fr obj xmlinterp4config core
-
 
 clean_plugin:
 	cd plugin; make clean
